@@ -2,7 +2,7 @@
   "name": "react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://au-williams.github.io/react",
+  "homepage": "https://au-williams.github.io/hacker-news",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
