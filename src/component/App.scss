@@ -1,0 +1,125 @@
+$color--black: #000000;
+$color--gray: #828282;
+$color--cream: #f6f6ef;
+$color--white: #ffffff;
+$color--orange: #ff6600;
+
+body {
+  box-sizing: border-box;
+  font-family: Verdana;
+  padding: 0.5em 10em;
+  min-width: 450px;
+
+  @media only screen and (max-width: 850px) {
+    padding: 0;
+  }
+
+  div,
+  label,
+  input {
+    font-family: Verdana;
+  }
+
+  #content {
+    background: $color--cream;
+    font-family: inherit;
+    padding-bottom: 0.25em;
+
+    > div {
+      margin: 0.75em;
+    }
+
+    nav {
+      align-items: center;
+      background: $color--orange;
+      box-sizing: border-box;
+      color: $color--black;
+      display: flex;
+      flex-wrap: wrap;
+      font-family: Verdana;
+      font-size: 0.8em;
+      min-height: 1.875em;
+
+      a,
+      img,
+      div,
+      span {
+        margin: 0 0.25em;
+        color: $color--black;
+      }
+
+      img {
+        border: 1px solid $color--white;
+        height: 1.25em;
+        width: 1.25em;
+      }
+
+      ul {
+        align-items: inherit;
+        display: inherit;
+        justify-content: center;
+        margin: 0 auto 0 0;
+        padding: 0;
+
+        li {
+          list-style-type: none;
+          // padding: 0.5em 1em;
+
+          a {
+            color: $color--black;
+          }
+        }
+      }
+    }
+
+    #search-bar {
+      font-size: 0.8em;
+      display: flex;
+      align-items: center;
+
+      input {
+        margin-left: 0.5em;
+      }
+
+      button {
+        margin-right: 0.5em;
+      }
+
+      label {
+        color: $color--gray;
+        display: inherit;
+        align-items: inherit;
+      }
+    }
+
+    #search-results {
+      font-size: 0.8em;
+
+      > div,
+      a {
+        display: flex;
+        padding: 0.25em 0;
+        text-decoration: none;
+
+        > div:nth-child(1) {
+          margin-right: 0.25em;
+          color: $color--gray;
+        }
+
+        > div:nth-child(2) {
+          margin-left: 0.25em;
+          height: 100%;
+
+          .result-head {
+            color: $color--black;
+          }
+
+          .result-desc {
+            color: $color--gray;
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}
