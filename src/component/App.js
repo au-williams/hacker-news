@@ -71,15 +71,6 @@ class App extends Component {
   };
 
   render() {
-    // this website is made to be ran online at https://austinwilliams.dev/hacker-news/
-    // running from localhost will work fine, however the root path will not auto route
-  
-    const URLs = {
-      root: `/hacker-news/`,
-      search: `/hacker-news/search`,
-      history: `/hacker-news/history`,
-    };
-
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div id="content">
@@ -91,11 +82,11 @@ class App extends Component {
             <ul>
               [
               <li>
-                <Link to={URLs.search}>search</Link>
+                <Link to="/search">search</Link>
               </li>
               |
               <li>
-                <Link to={URLs.history}>history</Link>
+                <Link to="/history">history</Link>
               </li>
               ]
             </ul>
@@ -112,7 +103,7 @@ class App extends Component {
             For now make the history inputs read-only until that work has been defined.
           */}
           <Switch>
-            <Route path={URLs.search}>
+            <Route path="/search">
               <Results
                 content={this.state.searchResults}
                 isLoading={this.state.isLoading}
@@ -123,10 +114,10 @@ class App extends Component {
                 onSearchTermChange={this.handleSearchTermChange}
               />
             </Route>
-            <Route path={URLs.history}>
+            <Route path="/history">
               <Results content={this.state.searchHistory} isReadOnly={true} />
             </Route>
-            <Redirect from={URLs.root} to={URLs.search} />
+            <Redirect from="/" to="/search" />
           </Switch>
         </div>
       </Router>
