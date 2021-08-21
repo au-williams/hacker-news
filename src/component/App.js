@@ -51,7 +51,6 @@ class App extends Component {
     fetch(input)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result.hits);
         this.setState({ isLoading: false, searchResults: result.hits });
       })
       .catch((error) => {
@@ -73,7 +72,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <div id="content">
           <nav>
             <img src={Logo}></img>
