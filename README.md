@@ -1,5 +1,6 @@
 # hacker-news
-My live webapp using the Hacker News search API. Built with the React library. https://austinwilliams.dev/hacker-news/
+
+My live web app using the "Hacker News" API. Built with the React JS library. https://austinwilliams.dev/hacker-news/
 
 # requirements
 
