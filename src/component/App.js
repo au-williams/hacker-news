@@ -2,6 +2,7 @@ import "./App.css";
 import HistoryRecord from "../models/HistoryRecord";
 import Logo from "../assets/logo_react.png";
 import React, { Component } from "react";
+import ResultsRoute from "../constants/ResultsRoute";
 import Results from "./Results";
 import SearchSortBy from "../constants/SearchSortBy";
 
@@ -112,10 +113,14 @@ class App extends Component {
                 onSearchKeyDown={this.handleKeyDown}
                 onSearchSortByChange={this.handleSearchSortByChange}
                 onSearchTermChange={this.handleSearchTermChange}
+                pageRoute={ResultsRoute.SEARCH}
               />
             </Route>
             <Route path="/history">
-              <Results content={this.state.searchHistory} isReadOnly={true} />
+              <Results
+                content={this.state.searchHistory}
+                isReadOnly={true}
+                pageRoute={ResultsRoute.HISTORY}/>
             </Route>
             <Redirect from="/" to="/search" />
           </Switch>
