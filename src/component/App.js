@@ -6,7 +6,7 @@ import Results from "./Results";
 import SearchSortBy from "../constants/SearchSortBy";
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
@@ -72,7 +72,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div id="content">
           <nav>
             <img src={Logo}></img>
