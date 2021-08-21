@@ -45,7 +45,7 @@ class App extends Component {
       ],
     });
 
-    const input = `http://hn.algolia.com/api/v1/${this.state.searchSortBy}?tags=story&query=${this.state.searchTerm}`;
+    const input = `https://hn.algolia.com/api/v1/${this.state.searchSortBy}?tags=story&query=${this.state.searchTerm}`;
 
     fetch(input)
       .then((res) => res.json())
