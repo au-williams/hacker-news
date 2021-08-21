@@ -76,8 +76,8 @@ class App extends Component {
   
     const URLs = {
       root: `/hacker-news/`,
-      search: `/hacker-news/search/`,
-      history: `/hacker-news/history/`,
+      search: `/hacker-news/search`,
+      history: `/hacker-news/history`,
     };
 
     return (
