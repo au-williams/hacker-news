@@ -39,7 +39,12 @@ const GetSearchElement = (record, key) => {
 
 class Results extends Component {
   render() {
-    const route = window.location.pathname.toLowerCase().substring(1);
+    // substring(13) to remove the leading /hacker-news/ location path
+    // see: https://austinwilliams.dev/hacker-news/ for a live version
+    const route = window.location.pathname
+      .substring(13)
+      .replace("/", "")
+      .toLowerCase();
     let element = null;
 
     if (this.props.isLoading) {

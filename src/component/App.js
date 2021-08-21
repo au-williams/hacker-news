@@ -32,7 +32,7 @@ class App extends Component {
       !this.state.searchTerm || !this.state.searchTerm.trim();
 
     if (isNullOrWhiteSpace) {
-      // dont send empty data to the api
+      // dont send empty data into the api
       this.setState({ searchResults: [] });
       return;
     }
@@ -71,6 +71,15 @@ class App extends Component {
   };
 
   render() {
+    // this website is made to be ran online at https://austinwilliams.dev/hacker-news/
+    // running from localhost will work fine, however the root path will not auto route
+  
+    const URLs = {
+      root: `/hacker-news/`,
+      search: `/hacker-news/search/`,
+      history: `/hacker-news/history/`,
+    };
+
     return (
       <Router>
         <div id="content">
@@ -82,11 +91,12 @@ class App extends Component {
             <ul>
               [
               <li>
-                <Link to="/search">search</Link>
+                {/* <Link to="/hacker-news/search">search</Link> */}
+                <Link to={URLs.search}>search</Link>
               </li>
               |
               <li>
-                <Link to="/history">history</Link>
+                <Link to={URLs.history}>history</Link>
               </li>
               ]
             </ul>
@@ -103,7 +113,7 @@ class App extends Component {
             For now make the history inputs read-only until that work has been defined.
           */}
           <Switch>
-            <Route path="/search">
+            <Route path={URLs.search}>
               <Results
                 content={this.state.searchResults}
                 isLoading={this.state.isLoading}
@@ -114,10 +124,10 @@ class App extends Component {
                 onSearchTermChange={this.handleSearchTermChange}
               />
             </Route>
-            <Route path="/history">
+            <Route path={URLs.history}>
               <Results content={this.state.searchHistory} isReadOnly={true} />
             </Route>
-            {/* <Redirect from="/" to="/search" /> */}
+            <Redirect from={URLs.root} to={URLs.search} />
           </Switch>
         </div>
       </Router>
