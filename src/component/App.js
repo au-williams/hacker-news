@@ -91,7 +91,6 @@ class App extends Component {
             <ul>
               [
               <li>
-                {/* <Link to="/hacker-news/search">search</Link> */}
                 <Link to={URLs.search}>search</Link>
               </li>
               |
