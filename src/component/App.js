@@ -117,7 +117,7 @@ class App extends Component {
             <Route path="/history">
               <Results content={this.state.searchHistory} isReadOnly={true} />
             </Route>
-            <Redirect from="/" to="/search" />
+            {/* <Redirect from="/" to="/search" /> */}
           </Switch>
         </div>
       </Router>
