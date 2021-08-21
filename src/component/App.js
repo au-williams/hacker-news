@@ -6,7 +6,7 @@ import Results from "./Results";
 import SearchSortBy from "../constants/SearchSortBy";
 
 import {
-  HashRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Link,
@@ -72,7 +72,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <div id="content">
           <nav>
             <img src={Logo}></img>
@@ -120,7 +120,7 @@ class App extends Component {
             <Redirect from="/" to="/search" />
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
