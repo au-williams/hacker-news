@@ -1,6 +1,6 @@
 import "./App.css";
 import HistoryRecord from "../models/HistoryRecord";
-import Logo from "../assets/logo_react.png";
+import Logo from "../assets/logo_github.png";
 import React, { Component } from "react";
 import ResultsRoute from "../constants/ResultsRoute";
 import Results from "./Results";
@@ -75,7 +75,9 @@ class App extends Component {
       <HashRouter>
         <div id="content">
           <nav>
-            <img src={Logo}></img>
+            <a href="https://github.com/au-williams/hacker-news">
+              <img src={Logo}></img>
+            </a>
             <span>
               <strong>Hacker News</strong> Search App
             </span>
