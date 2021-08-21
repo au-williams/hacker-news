@@ -81,7 +81,7 @@ class App extends Component {
     };
 
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div id="content">
           <nav>
             <img src={Logo}></img>
