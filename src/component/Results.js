@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import SearchSortBy from "../constants/SearchSortBy";
+import ResultsRoute from "../constants/ResultsRoute";
 
 // build elements based on the HistoryRecord data model
 const GetHistoryElement = (record, key) => {
@@ -44,7 +45,7 @@ class Results extends Component {
       element = <div>No {this.props.pageRoute} results!</div>;
     } else {
       element = this.props.content.map((record, key) =>
-        this.props.pageRoute === "search"
+        this.props.pageRoute === ResultsRoute.SEARCH
           ? GetSearchElement(record, key)
           : GetHistoryElement(record, key)
       );
