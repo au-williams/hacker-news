@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/hacker-news/static/css/main.86582480.chunk.css",
-    "main.js": "/hacker-news/static/js/main.e9552e1d.chunk.js",
-    "main.js.map": "/hacker-news/static/js/main.e9552e1d.chunk.js.map",
+    "main.css": "/hacker-news/static/css/main.326bf041.chunk.css",
+    "main.js": "/hacker-news/static/js/main.a6c91c8b.chunk.js",
+    "main.js.map": "/hacker-news/static/js/main.a6c91c8b.chunk.js.map",
     "runtime-main.js": "/hacker-news/static/js/runtime-main.f39301ef.js",
     "runtime-main.js.map": "/hacker-news/static/js/runtime-main.f39301ef.js.map",
-    "static/js/2.80ce8810.chunk.js": "/hacker-news/static/js/2.80ce8810.chunk.js",
-    "static/js/2.80ce8810.chunk.js.map": "/hacker-news/static/js/2.80ce8810.chunk.js.map",
+    "static/js/2.b7158244.chunk.js": "/hacker-news/static/js/2.b7158244.chunk.js",
+    "static/js/2.b7158244.chunk.js.map": "/hacker-news/static/js/2.b7158244.chunk.js.map",
     "index.html": "/hacker-news/index.html",
-    "static/css/main.86582480.chunk.css.map": "/hacker-news/static/css/main.86582480.chunk.css.map",
-    "static/js/2.80ce8810.chunk.js.LICENSE.txt": "/hacker-news/static/js/2.80ce8810.chunk.js.LICENSE.txt"
+    "static/css/main.326bf041.chunk.css.map": "/hacker-news/static/css/main.326bf041.chunk.css.map",
+    "static/js/2.b7158244.chunk.js.LICENSE.txt": "/hacker-news/static/js/2.b7158244.chunk.js.LICENSE.txt",
+    "static/media/github-brands.e2f07326.svg": "/hacker-news/static/media/github-brands.e2f07326.svg",
+    "static/media/info-circle-solid.92d3ccd5.svg": "/hacker-news/static/media/info-circle-solid.92d3ccd5.svg",
+    "static/media/times-circle-solid.13560fb8.svg": "/hacker-news/static/media/times-circle-solid.13560fb8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f39301ef.js",
-    "static/js/2.80ce8810.chunk.js",
-    "static/css/main.86582480.chunk.css",
-    "static/js/main.e9552e1d.chunk.js"
+    "static/js/2.b7158244.chunk.js",
+    "static/css/main.326bf041.chunk.css",
+    "static/js/main.a6c91c8b.chunk.js"
   ]
 }
