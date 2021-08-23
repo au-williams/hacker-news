@@ -1,0 +1,185 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 450px;
+  padding: 0 12vw;
+}
+
+body a,
+body a:visited {
+  color: #000000;
+}
+
+body .panel {
+  font-family: Verdana;
+  margin: 0.5em 0;
+}
+
+body .panel > .header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ff6600;
+  border: 1px solid #828282;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.8em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 1.875em;
+}
+
+body .panel > .header > * {
+  margin: 0 0.25em;
+}
+
+body .panel > .header > *:first-child {
+  margin-left: 0.5em;
+}
+
+body .panel > .header > *:last-child {
+  margin-right: 0.5em;
+}
+
+body .panel > .header img {
+  height: 1.125em;
+  width: 1.125em;
+}
+
+body .panel > .header > a img,
+body .panel > .header > img:nth-child(1) {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+body .panel > .header > a,
+body .panel > .header button {
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inherit;
+  height: 1.25em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: auto;
+  width: 1.25em;
+}
+
+body .panel > .header ul {
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  display: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: auto;
+  padding: 0;
+}
+
+body .panel > .header ul li {
+  list-style-type: none;
+  margin: 0 0.25em;
+}
+
+body .panel > .header ul li a {
+  margin: 0;
+  padding: 0;
+}
+
+body .panel > .content {
+  background: #f6f6ef;
+  border: 1px solid #828282;
+  border-top: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 0.8em;
+  padding: 0.75em;
+}
+
+body .panel > .content #search-bar {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.75em;
+}
+
+body .panel > .content #search-bar button {
+  margin-right: 0.5em;
+}
+
+body .panel > .content #search-bar input {
+  margin-left: 0.5em;
+}
+
+body .panel > .content #search-bar label {
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  color: #828282;
+  display: inherit;
+}
+
+body .panel > .content #search-results {
+  margin-top: 0.75em;
+}
+
+body .panel > .content #search-results a,
+body .panel > .content #search-results > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.25em 0;
+  text-decoration: none;
+}
+
+body .panel > .content #search-results a > div:nth-child(1),
+body .panel > .content #search-results > div > div:nth-child(1) {
+  margin-right: 0.25em;
+  color: #828282;
+}
+
+body .panel > .content #search-results a > div:nth-child(2),
+body .panel > .content #search-results > div > div:nth-child(2) {
+  margin-left: 0.25em;
+  height: 100%;
+}
+
+body .panel > .content #search-results a > div:nth-child(2) .result-head,
+body .panel > .content #search-results > div > div:nth-child(2) .result-head {
+  color: #000000;
+}
+
+body .panel > .content #search-results a > div:nth-child(2) .result-desc,
+body .panel > .content #search-results > div > div:nth-child(2) .result-desc {
+  color: #828282;
+  font-size: 0.8em;
+}
+
+@media only screen and (max-width: 925px) {
+  body {
+    padding: 0;
+  }
+  body .panel {
+    margin: 0;
+  }
+  body .panel .header,
+  body .panel .content {
+    border-left: none;
+    border-right: none;
+  }
+}
+/*# sourceMappingURL=App.css.map */
