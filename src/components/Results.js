@@ -6,14 +6,14 @@ import SearchSortBy from "../constants/SearchSortBy";
 // build elements based on the HistoryRecord model
 const GetHistoryElement = (record, index) => {
   const dateString = record.searchDate.toLocaleString();
-  const sortString = record.searchSortBy === SearchSortBy.RELEVANCE ? "relevance" : "date";
+  const sortString = `Sorted by ${record.searchSortBy === SearchSortBy.RELEVANCE ? "relevance" : "date"}`;
 
   return (
     <div key={record.searchDate.getTime()}>
       <div>{index + 1}.</div>
       <div>
         <div className="result-head">{record.searchTerm}</div>
-        <div className="result-desc">{`${dateString} | Sorted by ${sortString}`}</div>
+        <div className="result-desc">{`${dateString} | ${sortString}`}</div>
       </div>
     </div>
   );
