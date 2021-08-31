@@ -111,7 +111,7 @@ class App extends Component {
             </ul>
             <span>
               {/* wrap in span to collapse together */}
-              <strong>Made by: </strong>
+              <strong>Made by </strong>
               <a href="https://www.linkedin.com/in/auwilliams/">Austin Williams</a>
             </span>
           </nav>
