@@ -1,8 +1,8 @@
 $color--black: #000000;
-$color--gray: #828282;
 $color--cream: #f6f6ef;
-$color--white: #ffffff;
+$color--gray: #828282;
 $color--orange: #ff6600;
+$color--white: #ffffff;
 $font-size: 0.8em;
 
 html {
@@ -150,6 +150,10 @@ body {
       .content {
         border-left: none;
         border-right: none;
+      }
+
+      &:nth-of-type(2) .header {
+        border-top: none;
       }
     }
   }

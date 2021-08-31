@@ -181,5 +181,8 @@ body .panel > .content #search-results > div > div:nth-child(2) .result-desc {
     border-left: none;
     border-right: none;
   }
+  body .panel:nth-of-type(2) .header {
+    border-top: none;
+  }
 }
 /*# sourceMappingURL=App.css.map */
