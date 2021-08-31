@@ -1,22 +1,22 @@
 import "./App.css";
+import GitHubBrandsIcon from "../assets/github-brands.svg";
+import HistoryRecord from "../models/HistoryRecord";
+import InfoCircleIcon from "../assets/info-circle-solid.svg";
 import React, { Component } from "react";
 import Results from "./Results";
 import ResultsRoute from "../constants/ResultsRoute";
 import SearchSortBy from "../constants/SearchSortBy";
-import HistoryRecord from "../models/HistoryRecord";
-import GitHubBrandsIcon from "../assets/github-brands.svg";
-import InfoCircleIcon from "../assets/info-circle-solid.svg";
 import TimesCircleIcon from "../assets/times-circle-solid.svg";
 import { HashRouter, Switch, Route, Link, Redirect, } from "react-router-dom";
 
 class App extends Component {
   state = {
-    hidePanel: false,
     isLoading: false,
     searchHistory: [],
     searchResults: [],
     searchSortBy: SearchSortBy.RELEVANCE,
     searchTerm: "",
+    showInfo: true,
   };
 
   handleKeyDown = (e) => {
@@ -38,8 +38,8 @@ class App extends Component {
       isLoading: true,
       searchHistory: [
         ...this.state.searchHistory,
-        new HistoryRecord(this.state.searchTerm, this.state.searchSortBy),
-      ],
+        new HistoryRecord(this.state.searchTerm, this.state.searchSortBy)
+      ]
     });
 
     const input = `https://hn.algolia.com/api/v1/${this.state.searchSortBy}?tags=story&query=${this.state.searchTerm}`;
@@ -77,12 +77,12 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        {!this.state.hidePanel && (
+        {this.state.showInfo && (
           <div className="panel">
             <div className="header">
               <img src={InfoCircleIcon} alt="Info circle icon"/>
               <strong>Information</strong>
-              <button onClick={() => this.setState({hidePanel: true})}>
+              <button onClick={() => this.setState({showInfo: false})}>
                 <img src={TimesCircleIcon} alt="Close icon" className="close"/>
               </button>
             </div>
