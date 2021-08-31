@@ -4,13 +4,13 @@ import ResultsRoute from "../constants/ResultsRoute";
 import SearchSortBy from "../constants/SearchSortBy";
 
 // build elements based on the HistoryRecord model
-const GetHistoryElement = (record, key) => {
+const GetHistoryElement = (record, index) => {
   const dateString = record.searchDate.toLocaleString();
   const sortString = record.searchSortBy === SearchSortBy.RELEVANCE ? "relevance" : "date";
 
   return (
-    <div>
-      <div>{key + 1}.</div>
+    <div key={record.searchDate.getTime()}>
+      <div>{index + 1}.</div>
       <div>
         <div className="result-head">{record.searchTerm}</div>
         <div className="result-desc">{`${dateString} | Sorted by ${sortString}`}</div>
@@ -20,13 +20,13 @@ const GetHistoryElement = (record, key) => {
 };
 
 // build elements based on the HackerNews API object
-const GetSearchElement = (record, key) => {
+const GetSearchElement = (record, index) => {
   const pointString = `${record.points} point${record.points === 1 ? "" : "s"}`;
   const commentString = `${record.num_comments} comment${record.num_comments === 1 ? "" : "s"}`;
 
   return (
-    <a href={`https://news.ycombinator.com/item?id=${record.objectID}`}>
-      <div>{key + 1}.</div>
+    <a key={record.objectID} href={`https://news.ycombinator.com/item?id=${record.objectID}`}>
+      <div>{index + 1}.</div>
       <div>
         <div className="result-head">{record.title}</div>
         <div className="result-desc">{`${pointString} | ${commentString}`}</div>
@@ -53,10 +53,10 @@ export default function Results(props) {
     else if (!content || !content.length)
       return <div>No {pageRoute} results!</div>;
     else
-      return content.map((record, key) =>
+      return content.map((record, index) =>
         pageRoute === ResultsRoute.SEARCH
-          ? GetSearchElement(record, key)
-          : GetHistoryElement(record, key)
+          ? GetSearchElement(record, index)
+          : GetHistoryElement(record, index)
       );
   };
 
