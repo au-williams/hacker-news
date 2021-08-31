@@ -1,9 +1,9 @@
 import "./App.css";
-import React, { Component } from "react";
+import React from "react";
 import ResultsRoute from "../constants/ResultsRoute";
 import SearchSortBy from "../constants/SearchSortBy";
 
-// build elements based on the HistoryRecord data model
+// build elements based on the HistoryRecord model
 const GetHistoryElement = (record, key) => {
   const dateString = record.searchDate.toLocaleString();
   const sortString = record.searchSortBy === SearchSortBy.RELEVANCE ? "relevance" : "date";
@@ -35,51 +35,56 @@ const GetSearchElement = (record, key) => {
   );
 };
 
-class Results extends Component {
-  render() {
-    let element = null;
+export default function Results(props) {
+  const {
+    content,
+    isLoading,
+    isReadOnly,
+    onSearchClick,
+    onSearchKeyDown,
+    onSearchSortByChange,
+    onSearchTermChange,
+    pageRoute,
+  } = props;
 
-    if (this.props.isLoading) {
-      element = <div>Fetching API results ...</div>;
-    } else if (!this.props.content || !this.props.content.length) {
-      element = <div>No {this.props.pageRoute} results!</div>;
-    } else {
-      element = this.props.content.map((record, key) =>
-        this.props.pageRoute === ResultsRoute.SEARCH
+  const GetResultElement = () => {
+    if (isLoading)
+      return <div>Fetching API results ...</div>;
+    else if (!content || !content.length)
+      return <div>No {pageRoute} results!</div>;
+    else
+      return content.map((record, key) =>
+        pageRoute === ResultsRoute.SEARCH
           ? GetSearchElement(record, key)
           : GetHistoryElement(record, key)
       );
-    }
+  };
 
-    return (
-      <div className="content">
-        <div id="search-bar">
-          <label>Search</label>
+  return (
+    <div className="content">
+      <div id="search-bar">
+        <label>Search</label>
+        <input
+          disabled={isReadOnly}
+          onChange={onSearchTermChange}
+          onKeyDown={onSearchKeyDown}
+        />
+        <button
+          disabled={isReadOnly}
+          onClick={onSearchClick}>
+          →
+        </button>
+        <label>
           <input
-            disabled={this.props.isReadOnly}
-            onChange={this.props.onSearchTermChange}
-            onKeyDown={this.props.onSearchKeyDown}
+            defaultChecked="true"
+            disabled={isReadOnly}
+            onChange={onSearchSortByChange}
+            type="checkbox"
           />
-          <button
-            disabled={this.props.isReadOnly}
-            onClick={this.props.onSearchClick}
-          >
-            →
-          </button>
-          <label>
-            <input
-              defaultChecked="true"
-              disabled={this.props.isReadOnly}
-              onChange={this.props.onSearchSortByChange}
-              type="checkbox"
-            />
-            Sort by relevance
-          </label>
-        </div>
-        <div id="search-results">{element}</div>
+          Sort by relevance
+        </label>
       </div>
-    );
-  }
+      <div id="search-results">{GetResultElement()}</div>
+    </div>
+  );
 }
-
-export default Results;
